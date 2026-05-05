@@ -9,10 +9,10 @@ A hands-on project for learning Brain–Machine Interface (BMI) through controll
 This project connects neural signal decoding with embodied robot control:
 
 
-EEG → decoding → [vx, vy, yaw] → robot locomotion
+EEG → decoding → motion command → robot locomotion
 
 
-All algorithms share the same control interface, enabling consistent evaluation across methods.
+The motion command can be a discrete direction such as forward/left/right, or a continuous velocity command such as `[vx, vy, yaw]`.
 
 ## Run Simple MuJoCo Keyboard Control
 
