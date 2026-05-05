@@ -16,6 +16,22 @@ EEG → decoding → motion command → robot locomotion
 
 The motion command can be a discrete direction such as forward/left/right, or a continuous velocity command such as `[vx, vy, yaw]`.
 
+## Experiment Steps
+
+These two steps show the course workflow before running the robot demo: first build an EEG decoding model offline, then use the decoded motion command for online robot control.
+
+### Step 1: Offline EEG Decoding
+
+Use recorded EEG data to train a decoding model. The goal is to transform neural signals into motion commands, such as discrete directions or continuous velocity commands.
+
+![Step 1 Offline EEG Decoding](assets/Step%201%20Offline%20EEG%20Decoding.png)
+
+### Step 2: Online Robot Control
+
+Use real-time EEG signals and the trained decoder to generate robot commands. The robot executes these commands in MuJoCo, forming a closed-loop brain-to-robot control system.
+
+![Step 2 Online Robot Control](assets/Step%202%20Online%20Robot%20Control.png)
+
 ## Run Simple MuJoCo Keyboard Control
 
 ```bash
