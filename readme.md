@@ -45,3 +45,10 @@ e      move right
 space  stop
 x      exit
 ```
+
+## Details
+
+Installation package sources:
+
+- MuJoCo: https://github.com/google-deepmind/mujoco
+- Go2Py: https://github.com/machines-in-motion/Go2Py
