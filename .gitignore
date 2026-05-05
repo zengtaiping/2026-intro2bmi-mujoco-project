@@ -29,12 +29,6 @@ Desktop.ini
 # Runtime logs and experiment outputs
 logs/
 output_eeg/
-*.log
-*.csv
-*.edf
-*.edf.dat
-*.npz
-*.npy
 
 # Large/generated MuJoCo dumps
 MJDATA.TXT
