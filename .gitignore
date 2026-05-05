@@ -29,7 +29,6 @@ Desktop.ini
 # Runtime logs and experiment outputs
 logs/
 output_eeg/
-data/
 *.log
 *.csv
 *.edf

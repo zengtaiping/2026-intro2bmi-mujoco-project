@@ -1,0 +1,1 @@
+{"Offsets":[{"SequenceNo":29552,"Timestamp":1777901151169,"Offset":0,"InstanceId":"33 A6 27 58 71 16 15 81","Latest":{"InstanceId":"33 A6 27 58 71 16 15 81","SequenceNo":40260,"PackTimestamp":1777901686588,"ServerReceiveTimestamp":1777901686469,"ServerReceive":"2026-05-04T21:34:46.469+08:00","Delay":-119,"IsNewOffsetStart":false,"FirstFill":null}}],"NeedFlash":true}
