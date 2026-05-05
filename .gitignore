@@ -1,0 +1,57 @@
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local configuration and editor files
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+Desktop.ini
+
+# Runtime logs and experiment outputs
+logs/
+output_eeg/
+data/
+*.log
+*.csv
+*.edf
+*.edf.dat
+*.npz
+*.npy
+
+# Large/generated MuJoCo dumps
+MJDATA.TXT
+MJMODEL.TXT
+
+# Temporary and backup files
+*.tmp
+*.bak
+*.backup
+*~
+
+# Neuron Dance
+Drone/
+figs/
+
+# Other scripts
+verify_go2_env.py
+simple_mujoco_keyboard_control.py
+build_go2_eeg_dataset.py
