@@ -1,0 +1,93 @@
+# Go2 EEG Keyboard Control Dataset
+
+This project contains a small EEG-based movement-intention experiment built around a MuJoCo simulation of the Unitree Go2 robot. During the experiment, a participant controls the simulated robot with keyboard arrow keys while EEG data are recorded with NeuroAI. The task labels are defined by map cues in the simulation:
+
+- `L`: left turn
+- `S`: straight
+- `R`: right turn
+
+The repository includes the Windows experiment script, the processed EEG trial dataset, and theoretical tutorials for classical machine learning and neural-network examples.
+
+## Contents
+
+### `data/`
+
+The `data` folder contains the processed supervised-learning dataset:
+
+```text
+data/go2_eeg_dataset.npz
+```
+
+The `.npz` file contains two arrays:
+
+```python
+eeg_feature  # EEG trial data, shape: (trials, channels, timepoints)
+label        # trial labels, shape: (trials,)
+```
+
+Dataset summary:
+
+- 180 total trials
+- 8 EEG channels
+- 4990 samples per trial
+- 1000 Hz sampling rate
+- balanced classes: `L=60`, `S=60`, `R=60`
+
+### `tutorials/`
+
+The `tutorials` folder provides example notebooks for training models on other preprocessed EEG datasets.
+
+These Jupyter Notebooks demonstrate the fundamental principles and usage examples of various models; you can use them as a reference to perform `L/S/R` classification on the **Go2 EEG Keyboard Control Dataset**.
+
+### `windows_go2_eeg_keyboard_control.py`
+
+This is the main Windows experiment script. It launches the Go2 MuJoCo simulation, displays map-based target cues, listens to keyboard input, and logs trial events.
+
+Key controls:
+
+- `Up`: move forward
+- `Left`: turn left
+- `Right`: turn right
+- `Down`: move backward
+- `Space`: start the experiment / stop movement
+- `Esc` or `x`: exit
+
+The script records trial timing events such as:
+
+```text
+trial001_start_forward
+trial001_end_forward
+trial002_start_turn_left
+trial002_end_turn_left
+```
+
+These event timestamps can be aligned with EEG recording timestamps after the experiment.
+
+### `run_windows_go2_eeg.bat`
+
+This batch file starts the Windows experiment using the configured Python virtual environment:
+
+```bat
+run_windows_go2_eeg.bat
+```
+
+The default experiment configuration is:
+
+- 20 trials per class
+- 3 classes: left, straight, right
+- 5 seconds per target cue
+- 3 seconds between cues
+- 60 trials total
+
+## Data Construction
+
+The processed dataset was created by aligning NeuroAI EEG recordings with Go2 trial logs using absolute timestamps. Each trial was cut from the EEG recording using its trial start and end events, then mapped to one of the three labels:
+
+```text
+turn_left  -> L
+straight   -> S
+turn_right -> R
+```
+
+The final merged dataset is saved as a single `go2_eeg_dataset.npz` file with only `eeg_feature` and `label`.
+
