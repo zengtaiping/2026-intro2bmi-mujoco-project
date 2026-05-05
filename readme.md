@@ -2,6 +2,8 @@
 
 A hands-on project for learning Brain–Machine Interface (BMI) through controlling a quadruped robot in MuJoCo.
 
+![Intro2BMI MuJoCo course cover](assets/course-cover.png)
+
 ---
 
 ## 🚀 Overview
