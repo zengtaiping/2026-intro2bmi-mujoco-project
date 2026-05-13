@@ -1,5 +1,7 @@
 # Go2 EEG Keyboard Control Dataset
 
+---
+
 This project contains a small EEG-based movement-intention experiment built around a MuJoCo simulation of the Unitree Go2 robot. During the experiment, a participant controls the simulated robot with keyboard arrow keys while EEG data are recorded with NeuroAI. The task labels are defined by map cues in the simulation:
 
 - `L`: left turn
@@ -37,11 +39,11 @@ Dataset summary:
 
 The `tutorials` folder contains preprocessing and decoding examples for the Go2 EEG dataset:
 
-- `preprocess_trials_demo.ipynb`: preprocess already segmented trial-level EEG features.
-- `preprocess_raw_to_epochs_demo.ipynb`: preprocess continuous raw EEG first, then cut it into epochs.
-- `decode_logreg_demo.ipynb`: run a logistic-regression baseline for three-class EEG decoding.
-- `decode_mlp_demo.ipynb`: run an MLP neural-network baseline for three-class EEG decoding.
-- `benchmark_decoders.py`: benchmark multiple classical machine-learning and neural-network decoders.
+- `01_preprocess_trials_demo.ipynb`: preprocess already segmented trial-level EEG features.
+- `02_preprocess_raw_to_epochs_demo.ipynb`: preprocess continuous raw EEG first, then cut it into epochs.
+- `03_decode_logreg_demo.ipynb`: run a logistic-regression baseline for three-class EEG decoding.
+- `04_decode_mlp_demo.ipynb`: run an MLP neural-network baseline for three-class EEG decoding.
+- `05_benchmark_decoders.py`: benchmark multiple classical machine learning and neural network decoders.
 
 ### `windows_go2_eeg_keyboard_control.py`
 
@@ -99,19 +101,19 @@ The final merged dataset is saved as a single `go2_eeg_dataset.npz` file with on
 
 ### Classical Machine Learning
 
-| Model | Macro Accuracy | Weighted Accuracy | Macro Precision | Weighted Precision | Macro Recall | Weighted Recall | Macro F1 | Weighted F1 |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| LDA | 59.26% | 59.26% | 38.28% | 38.28% | 38.89% | 38.89% | 0.3785 | 0.3785 |
-| Logistic Regression | 59.26% | 59.26% | 38.28% | 38.28% | 38.89% | 38.89% | 0.3785 | 0.3785 |
-| SVM | 61.11% | 61.11% | 41.75% | 41.75% | 41.67% | 41.67% | 0.4063 | 0.4063 |
+| Model | Accuracy(%) | Macro Precision(%) | Weighted Precision(%) | Macro Recall(%) | Weighted Recall(%) | Macro F1 | Weighted F1 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| LDA | 59.26 |  38.28 | 38.28 | 38.89 | 38.89 | 0.3785 | 0.3785 |
+| Logistic Regression |  59.26 | 38.28 | 38.28 | 38.89 | 38.89 | 0.3785 | 0.3785 |
+| SVM | 61.11 | 41.75 | 41.75 | 41.67 | 41.67 | 0.4063 | 0.4063 |
 
 ### Neural Network
 
-| Model | Macro Accuracy | Weighted Accuracy | Macro Precision | Weighted Precision | Macro Recall | Weighted Recall | Macro F1 | Weighted F1 |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| MLP | 55.56% | 55.56% | 33.33% | 33.33% | 33.33% | 33.33% | 0.3333 | 0.3333 |
-| CNN | 57.41% | 57.41% | 35.6% | 35.6% | 36.11% | 36.11% | 0.3236 | 0.3236 |
-| RNN | 48.15% | 48.15% | 23.84% | 23.84% | 22.22% | 22.22% | 0.2286 | 0.2286 |
-| LSTM | 55.56% | 55.56% | 32.14% | 32.14% | 33.33% | 33.33% | 0.3231 | 0.3231 |
-| EEGNet-LSTM | 57.41% | 57.41% | 35.46% | 35.46% | 36.11% | 36.11% | 0.3516 | 0.3516 |
-| Transformer | 55.56% | 55.56% | 32.76% | 32.76% | 33.33% | 33.33% | 0.3195 | 0.3195 |
+| Model | Accuracy(%) | Macro Precision(%) | Weighted Precision(%) | Macro Recall(%) | Weighted Recall(%) | Macro F1 | Weighted F1 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| MLP | 55.56 | 33.33 | 33.33 | 33.33 | 33.33 | 0.3333 | 0.3333 |
+| CNN | 57.41 | 35.6 | 35.6 | 36.11 | 36.11 | 0.3236 | 0.3236 |
+| RNN | 48.15 | 23.84 | 23.84 | 22.22 | 22.22 | 0.2286 | 0.2286 |
+| LSTM | 55.56 | 32.14 | 32.14 | 33.33 | 33.33 | 0.3231 | 0.3231 |
+| EEGNet-LSTM | 57.41 | 35.46 | 35.46 | 36.11 | 36.11 | 0.3516 | 0.3516 |
+| Transformer | 55.56 | 32.76 | 32.76 | 33.33 | 33.33 | 0.3195 | 0.3195 |
