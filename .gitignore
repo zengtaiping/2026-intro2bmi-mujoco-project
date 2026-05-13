@@ -29,6 +29,10 @@ Desktop.ini
 # Runtime logs and experiment outputs
 logs/
 output_eeg/
+ppt/
+tutorials/Preprocessing/
+data/*preprocessed*
+data/*results*
 
 # Large/generated MuJoCo dumps
 MJDATA.TXT

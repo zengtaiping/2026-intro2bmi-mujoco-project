@@ -35,9 +35,13 @@ Dataset summary:
 
 ### `tutorials/`
 
-The `tutorials` folder provides example notebooks for training models on other preprocessed EEG datasets.
+The `tutorials` folder contains preprocessing and decoding examples for the Go2 EEG dataset:
 
-These Jupyter Notebooks demonstrate the fundamental principles and usage examples of various models; you can use them as a reference to perform `L/S/R` classification on the **Go2 EEG Keyboard Control Dataset**.
+- `preprocess_trials_demo.ipynb`: preprocess already segmented trial-level EEG features.
+- `preprocess_raw_to_epochs_demo.ipynb`: preprocess continuous raw EEG first, then cut it into epochs.
+- `decode_logreg_demo.ipynb`: run a logistic-regression baseline for three-class EEG decoding.
+- `decode_mlp_demo.ipynb`: run an MLP neural-network baseline for three-class EEG decoding.
+- `benchmark_decoders.py`: benchmark multiple classical machine-learning and neural-network decoders.
 
 ### `windows_go2_eeg_keyboard_control.py`
 
