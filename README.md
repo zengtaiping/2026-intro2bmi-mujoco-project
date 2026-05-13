@@ -91,3 +91,23 @@ turn_right -> R
 
 The final merged dataset is saved as a single `go2_eeg_dataset.npz` file with only `eeg_feature` and `label`.
 
+## Baseline
+
+### Classical Machine Learning
+
+| Model | Macro Accuracy | Weighted Accuracy | Macro Precision | Weighted Precision | Macro Recall | Weighted Recall | Macro F1 | Weighted F1 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| LDA | 59.26% | 59.26% | 38.28% | 38.28% | 38.89% | 38.89% | 0.3785 | 0.3785 |
+| Logistic Regression | 59.26% | 59.26% | 38.28% | 38.28% | 38.89% | 38.89% | 0.3785 | 0.3785 |
+| SVM | 61.11% | 61.11% | 41.75% | 41.75% | 41.67% | 41.67% | 0.4063 | 0.4063 |
+
+### Neural Network
+
+| Model | Macro Accuracy | Weighted Accuracy | Macro Precision | Weighted Precision | Macro Recall | Weighted Recall | Macro F1 | Weighted F1 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| MLP | 55.56% | 55.56% | 33.33% | 33.33% | 33.33% | 33.33% | 0.3333 | 0.3333 |
+| CNN | 57.41% | 57.41% | 35.6% | 35.6% | 36.11% | 36.11% | 0.3236 | 0.3236 |
+| RNN | 48.15% | 48.15% | 23.84% | 23.84% | 22.22% | 22.22% | 0.2286 | 0.2286 |
+| LSTM | 55.56% | 55.56% | 32.14% | 32.14% | 33.33% | 33.33% | 0.3231 | 0.3231 |
+| EEGNet-LSTM | 57.41% | 57.41% | 35.46% | 35.46% | 36.11% | 36.11% | 0.3516 | 0.3516 |
+| Transformer | 55.56% | 55.56% | 32.76% | 32.76% | 33.33% | 33.33% | 0.3195 | 0.3195 |
