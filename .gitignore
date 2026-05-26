@@ -33,6 +33,8 @@ ppt/
 tutorials/Preprocessing/
 data/*preprocessed*
 data/*results*
+tutorials/Foundation\ Model/official_code/
+tutorials/Foundation\ Model/outputs/
 
 # Large/generated MuJoCo dumps
 MJDATA.TXT
