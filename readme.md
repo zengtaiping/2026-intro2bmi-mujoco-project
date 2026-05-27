@@ -16,6 +16,16 @@ EEG → decoding → motion command → robot locomotion
 
 The motion command can be a discrete direction such as forward/left/right, or a continuous velocity command such as `[vx, vy, yaw]`.
 
+## Tutorials
+
+The `tutorials` folder under the **go2-eeg** branch contains preprocessing and decoding examples for the Go2 EEG dataset:
+
+- `01_preprocess_trials_demo.ipynb`: preprocess already segmented trial-level EEG features.
+- `02_preprocess_raw_to_epochs_demo.ipynb`: preprocess continuous raw EEG first, then cut it into epochs.
+- `03_decode_logreg_demo.ipynb`: run a logistic-regression baseline for three-class EEG decoding.
+- `04_decode_mlp_demo.ipynb`: run an MLP neural-network baseline for three-class EEG decoding.
+- `05_benchmark_decoders.py`: benchmark multiple classical machine learning and neural network decoders.
+
 ## Experiment Steps
 
 These two steps show the course workflow before running the robot demo: first build an EEG decoding model offline, then use the decoded motion command for online robot control.
